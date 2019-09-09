@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Tabs} from 'antd';
+import 'antd/dist/antd.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends React.Component {
+    
+  render() {
+      const { TabPane } = Tabs;
+
+      function callback(key) {
+          console.log(key);
+        }
+
+      return (
+          <div style={{width:300, margin:"auto", textAlign:"center"}}>
+              <Tabs defaultActiveKey="1" onChange={callback}>
+                  <TabPane tab="Tab 1" key="1">
+                      gContent of Tab Pane 1
+                  </TabPane>
+              <TabPane tab="Tab 2" key="2">
+                  Content of Tab Pane 2
+              </TabPane>
+              <TabPane tab="Tab 3" key="3">
+                  Content of Tab Pane 3
+              </TabPane>
+              </Tabs>
+          </div>
+      );
+  }
 }
 
 export default App;
