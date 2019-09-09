@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Tabs} from 'antd';
+import 'antd/dist/antd.css';
+
 
 class TabsAnt extends Component {
     
@@ -11,7 +13,7 @@ class TabsAnt extends Component {
           }
 
         return (
-            <div>
+            <div style={{width:300, margin:"auto", textAlign:"center"}}>
                 <Tabs defaultActiveKey="1" onChange={callback}>
                     <TabPane tab="Tab 1" key="1">
                         gContent of Tab Pane 1
